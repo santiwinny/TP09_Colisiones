@@ -6,6 +6,10 @@ public class InteractionArea : MonoBehaviour
 {
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("Hubo colisión");
+        if(col.gameObject.CompareTag("Pickable"))
+        {
+           Debug.Log("Hubo colisión con un Pickable");
+           Destroy(col.gameObject); 
+        }
     }
 }
